@@ -1,0 +1,11 @@
+{
+  "version": "0.0.0",
+  "devDependencies": {
+  },
+  "dependencies": {
+    "coffee-script": "^1.8.0"
+  },
+  "scripts": {
+  },
+  "name": "cards"
+}
