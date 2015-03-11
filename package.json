@@ -1,11 +1,26 @@
 {
   "version": "0.0.0",
   "devDependencies": {
+    "extract-text-webpack-plugin": "^0.3.8",
+    "babel": "^4.1.1",
+    "babel-core": "^4.0.1",
+    "babel-loader": "^4.0.0",
+    "css-loader": "^0.9.1",
+    "file-loader": "^0.8.1",
+    "json-loader": "^0.5.1",
+    "react-hot-loader": "^1.1.5",
+    "rewire-webpack": "^1.0.0",
+    "style-loader": "^0.8.3",
+    "url-loader": "^0.5.5"
   },
   "dependencies": {
-    "coffee-script": "^1.8.0"
+    "coffee-script": "^1.8.0",
+    "firebase": "^2.2.2",
+    "webpack": "^1.7.2",
+    "webpack-dev-server": "^1.7.0"
   },
   "scripts": {
+    "start": "webpack-dev-server --hot --progress --colors --content-base build"
   },
   "name": "cards"
 }
