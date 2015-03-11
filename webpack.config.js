@@ -1,3 +1,5 @@
+var path = require('path');
+var bourbon = require('node-bourbon').includePaths;
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
@@ -6,7 +8,7 @@ var config = {
     app: [
       'webpack-dev-server/client?http://localhost:8080',
       'webpack/hot/only-dev-server',
-      './src/main.js'
+      './src/scripts/main.js'
     ],
     vendor: [
       // 'react',
@@ -25,8 +27,13 @@ var config = {
       { test: /\.coffee$/, loader: "coffee-loader" },
       { test: /\.(js|jsx)$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/},
       { test: /\.json$/, loader: 'json' },
+      { test: /\.(png|woff)$/, loader: 'url-loader?limit=100000' },
       { test: /\.css$/, loader: 'style-loader!css' },
-      { test: /\.(png|woff)$/, loader: 'url-loader?limit=100000' }
+      {
+        test: /\.scss$/,
+        loader: "style!css!sass?includePaths[]=" + bourbon + "&" +
+                "includePaths[]=" + (path.resolve(__dirname, "./node_modules"))
+      }
     ]
   },
   plugins: [
