@@ -8,12 +8,14 @@ var config = {
     app: [
       'webpack-dev-server/client?http://localhost:8080',
       'webpack/hot/only-dev-server',
-      './src/scripts/main.js'
+      './src/scripts/main.coffee'
     ],
     vendor: [
       'react',
       'jquery',
-      'asyncQueue'
+      'asyncQueue',
+      'minivents',
+      'lodash'
     ]
   },
   output: {
