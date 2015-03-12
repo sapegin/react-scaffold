@@ -1,0 +1,9 @@
+{
+  "root": {
+    "path": "/"
+  },
+  "notFound": {
+    "path": "/*"
+  },
+  "error": {}
+}
