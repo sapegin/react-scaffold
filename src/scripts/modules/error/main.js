@@ -1,7 +1,7 @@
 var React = require('react');
 
 var ErrorReactComponent = React.createClass({
-  render: function() {
+  render() {
     return (
       <div>
         <p> Error at: </p>
@@ -26,7 +26,7 @@ class Err {
     React.render(
       <ErrorReactComponent errorText={request.params.error} errorPath={request.params.path} />,
       document.body
-    )
+    );
   }
 }
 
