@@ -31,7 +31,7 @@
     "webpack-dev-server": "^1.7.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --hot --progress --colors --content-base build"
+    "start": "webpack-dev-server --hot --progress --colors --content-base build --history-api-fallback"
   },
   "name": "cards"
 }
