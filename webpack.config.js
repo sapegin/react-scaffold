@@ -11,16 +11,19 @@ var config = {
       './src/scripts/main.js'
     ],
     vendor: [
-      // 'react',
-      // 'lodash',
-      // 'reflux',
-      // 'immutable',
-      // 'superagent'
+      'react',
+      'jquery',
+      'asyncQueue'
     ]
   },
   output: {
     path: './build',
     filename: "bundle.js"
+  },
+  resolve: {
+    alias: {
+      'asyncQueue': 'rygr.async-queue/rygr.async-queue.browser.js'
+    }
   },
   module: {
     loaders: [
