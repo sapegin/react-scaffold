@@ -28,5 +28,9 @@ class App {
 
 Events(App.prototype);
 
+var app = new App();
+
 // TODO: remove window var
-window.app = new App();
+window.app = app
+
+module.exports = app

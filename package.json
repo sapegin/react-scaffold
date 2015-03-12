@@ -1,4 +1,12 @@
 {
+  "name": "react-scaffold",
+  "contributors": [{
+    "name" : "Joan Smith",
+    "email" : "joanclarasmith@gmail.com"
+  }, {
+    "name": "Patrick Camacho",
+    "email": "patrick@daftdevelopers.com"
+  }],
   "version": "0.0.0",
   "devDependencies": {
     "babel": "^4.1.1",
@@ -33,6 +41,5 @@
   },
   "scripts": {
     "start": "webpack-dev-server --hot --progress --colors --content-base build --history-api-fallback"
-  },
-  "name": "cards"
+  }
 }
