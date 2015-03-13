@@ -60,13 +60,13 @@ The webpack config is setup with a few helpful loaders out of the box:
 * css
 * scss (with [bourbon](http://bourbon.io/docs/))
 
-The web dev server can be started by running `npm start`. In the [package.json](package.json#L43) file, you can edit the various flags that have been set for the flag under the `start` script. By default, `npm start` runs:
+The web dev server can be started by running `npm start`. In the [package.json](package.json#L43) file, you can edit the various flags that have been set under the `start` script. By default, `npm start` runs:
 
 ```sh
 $ webpack-dev-server --hot --progress --colors --content-base build --history-api-fallback
 ```
 
-**Important - the `history-api-fallback` flag is important for providing necessary pushstate support**
+**Important - the `history-api-fallback` flag is necessary for providing pushstate support**
 
 
 Architecture
@@ -113,7 +113,7 @@ app.changeUrl('path', {options});
 
 When a `urlChange` is called, the router updates the url via pushstate, which triggers a state change within the app.
 
-**Important - Pass `{silent: true}` as an option to update the url without firing a state change event`***
+**Important - Pass `{silent: true}` as an option to update the url without firing a state change event***
 
 ### Middleware
 
@@ -125,11 +125,11 @@ The middleware queue is built in `middleware/main.js`. All methods receive three
 
 ```js
 module.exports = function(request, app, next){
-  # Request object will have the name of the state and any parameters
-  # To continue to the next function in the queue, call next with no arguments
+  // Request object will have the name of the state and any parameters
+  // To continue to the next function in the queue, call next with no arguments
   next();
 
-  # To surface an error and jump to the error handler, call next with an argument
+  // To surface an error and jump to the error handler, call next with an argument
   next(new Error('Something went wrong!'));
 };
 ```
@@ -138,9 +138,9 @@ Calling next with an error will force the queue to skip all the way to the first
 
 ```js
 module.exports = function(err, request, app, next){
-  # This method will only be executed if there is an error
-  # It is possible to have multiple error handlers in the middleware
-  # by continuing to call `next` with the err
+  // This method will only be executed if there is an error
+  // It is possible to have multiple error handlers in the middleware
+  // by continuing to call `next` with the err
 }
 ```
 
@@ -160,12 +160,12 @@ It is possible to add any additional events needed, or mixin [minivents](https:/
 
 Modules are where the meat of the application exists. They allow for separation of logic along discrete functional lines.
 
-Typically, a module will register to one more states by subscribing to the app state change events, but that is not a requirement.
+Typically, a module will respond to one more states by subscribing to the app state change events, but that is not a requirement.
 
 A common case is to use a module as a starting point for any UI behavior:
 
 ```js
-# modules/root/main.js
+// modules/root/main.js
 
 var RootReactComponent = React.createClass({
   render: function() {
