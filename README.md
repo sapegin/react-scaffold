@@ -75,7 +75,7 @@ Architecture
 ### States (as first class citizens)
 Most applications use routes as a source of state within an application. This can create some difficult situations when trying to handle non-url-persisted state within an application (error state, signup state, authentication state, etc).
 
-To handle these types of situations, this architecture separates out routing and state management, and maintains a series of statically defined states in the [states.json](states.json) file.
+To handle these types of situations, this architecture separates out routing and state management, and maintains a series of statically defined states in the [states.json](src/scripts/states.json) file.
 
 A state definition consists of a key and a hash of options. Whenever a state is emitted, a state transition is kicked off, with the options being passed along.
 
